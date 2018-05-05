@@ -1,0 +1,11 @@
+main: fire.MortalShortener.Main
+name: MortalShortener
+version: 1.0
+author: FireFlower
+description: Used to shorten commands
+commands:
+  MortalShortenerReload:
+    description: Reloads the config
+    usage: MortalShortener
+    permission: MortalShortener.reload
+    permission-message: You do not have permission MortalShortener.reload
