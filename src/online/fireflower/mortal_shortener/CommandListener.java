@@ -6,15 +6,18 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class CommandListener implements Listener{
+
+	KeywordReplacer keywordReplacer;
+
+	public CommandListener(KeywordReplacer keywordReplacer){
+	    this.keywordReplacer = keywordReplacer;
+    }
+
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onCommand(PlayerCommandPreprocessEvent event){
-		if (!event.getPlayer().hasPermission("staff.shorten") && !event.getPlayer().isOp())
+		if (!event.getPlayer().hasPermission("staff.shorten"))
 			return;
-		
-		String msg = event.getMessage();
-		for (String keyword : MortalShortener.replacements.keySet()){
-			msg = msg.replace(keyword, MortalShortener.replacements.get(keyword));
-		}
-		event.setMessage(msg);
+
+		event.setMessage(keywordReplacer.replace(event.getMessage()));
 	}
 }

@@ -11,13 +11,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MortalShortener extends JavaPlugin{
 
-	public static Map<String, String> replacements;
+	KeywordReplacer keywordReplacer;
+
 	@Override
 	public void onEnable(){		
 		loadConfig();
         this.getCommand("MortalShortenerReload").setExecutor(new ReloadConfig(this));
     	PluginManager pm = getServer().getPluginManager();
-    	pm.registerEvents(new CommandListener(), this);
+    	pm.registerEvents(new CommandListener(keywordReplacer), this);
 	}
 
 	@Override
@@ -29,11 +30,11 @@ public class MortalShortener extends JavaPlugin{
 	public void loadConfig(){
 		makeConfig();
 		FileConfiguration config = getConfig();
-		Map<String, String> ShortenersMap = new HashMap<String, String>();
+		Map<String, String> replacements = new HashMap<>();
 		for (String key : config.getKeys(false)){
-			ShortenersMap.put("#" + key, config.getString(key));
-		}		
-		replacements = ShortenersMap;		
+            replacements.put("#" + key, config.getString(key));
+		}
+        keywordReplacer = new KeywordReplacer(replacements);
 	}	
 	private void makeConfig(){
 		if (!getDataFolder().exists()) {
