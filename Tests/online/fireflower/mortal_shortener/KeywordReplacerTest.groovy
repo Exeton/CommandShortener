@@ -22,10 +22,9 @@ class KeywordReplacerTest extends GroovyTestCase {
     void testReplacementSubstrings() throws Exception{
 
         HashMap<String, String> replacements = new HashMap<>();
-        replacements.put("#reason", "for cheating");
+        replacements.put("#reason", "lol");
         replacements.put("#reasonA", "for being a big noob");//This one must follow "reasons"
         KeywordReplacer keywordReplacer = new KeywordReplacer(replacements);
-
 
         String message = "/ban Notch #reasonA";
         Assert.assertEquals("/ban Notch for being a big noob", keywordReplacer.replace(message));
