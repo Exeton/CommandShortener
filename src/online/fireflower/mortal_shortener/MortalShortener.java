@@ -1,4 +1,4 @@
-package fire.MortalShortener;
+package online.fireflower.mortal_shortener;
 
 import java.io.File;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public class Main extends JavaPlugin{
+public class MortalShortener extends JavaPlugin{
 
 	public static Map<String, String> replacements;
 	@Override

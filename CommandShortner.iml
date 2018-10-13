@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://$USER_HOME$/Desktop/Server/spigot.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../Server/spigot.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -13,11 +13,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="9" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
       <library name="spigot.jar">
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Server/spigot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../Server/spigot.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

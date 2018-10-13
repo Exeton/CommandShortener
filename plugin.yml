@@ -1,4 +1,4 @@
-main: fire.MortalShortener.Main
+main: online.fireflower.mortal_shortener.MortalShortener
 name: MortalShortener
 version: 1.0
 author: FireFlower

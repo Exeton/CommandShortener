@@ -1,4 +1,4 @@
-package fire.MortalShortener;
+package online.fireflower.mortal_shortener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -12,8 +12,8 @@ public class CommandListener implements Listener{
 			return;
 		
 		String msg = event.getMessage();
-		for (String keyword : Main.replacements.keySet()){
-			msg = msg.replace(keyword, Main.replacements.get(keyword));
+		for (String keyword : MortalShortener.replacements.keySet()){
+			msg = msg.replace(keyword, MortalShortener.replacements.get(keyword));
 		}
 		event.setMessage(msg);
 	}
